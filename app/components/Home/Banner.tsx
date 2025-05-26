@@ -10,7 +10,7 @@ const Banner = ({
   p1,
   h1,
 }: {
-  image: string;
+  image?: string;
   header: string;
   p1: string;
   h1: string;

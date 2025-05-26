@@ -22,7 +22,7 @@ const page = () => {
     <div>
       <Navbar/>
       <Banner
-        h1={contentData.h1Banner}
+        h1={contentData.h1Banner.split("[location]").join( ContactInfo.location)?.split("[phone]").join(ContactInfo.No)}
         image={contentData.bannerImage}
         header=""
         p1={contentData.metaDescription?.split("[location]").join( ContactInfo.location)

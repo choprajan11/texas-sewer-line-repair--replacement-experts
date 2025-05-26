@@ -67,10 +67,6 @@ const page = () => {
 
         {/* Content 1 */}
         <div className="">
-          <div className=" mt-6 text-center text-4xl text-minor">
-            {contentData?.serviceTitle?.split("[location]").join(Data?.name || ContactInfo.location)
-    ?.split("[phone]").join(ContactInfo.No)}
-          </div>
           {/* <Affordable /> */}
           <Service value={subdomain}/>
           {/* <TypeOfDumpster /> */}

@@ -6,7 +6,7 @@ import ContactInfo from "@/components/Content/ContactInfo.json";
 const CtaSimple = () => {
   return (
     <div className=" overflow-hidden w-full">   
-     <div className=" text-center z-[2]  grid gap-4 font-bold py-6 text-white bg-[#191e34] group  relative  ">
+     <div className=" text-center z-[2]  grid gap-4 font-bold py-6 text-white bg-main group  relative  ">
       <div className="w-16 h-16 group-hover:bg-white hidden md:flex bg-white rounded-full inset-y-0 -right-8 mt-[38px]  absolute ease-in duration-300"></div>
       <div className="w-16 h-16 group-hover:bg-white hidden md:flex bg-white rounded-full inset-y-0 -left-8 mt-[38px] absolute  ease-in duration-300"></div>
       <div className="text-lg ">24/7 Customer Service</div>

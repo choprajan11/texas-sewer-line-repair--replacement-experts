@@ -91,4 +91,3 @@ const Faq = ({ value = "" }) => {
 };
 
 export default Faq;
-

@@ -44,9 +44,9 @@ const page = ({ params }: { params: { services: string } }) => {
     <div className="">
       <Banner
         h1={serviceData.title.split("[location]").join(locationName)}
-        image={"banner.jpg"}
         header=""
-        p1={serviceData.description.split("[location]").join(locationName)}
+        p1={serviceData.description?.split("[location]").join(ContactInfo.location)
+            ?.split("[phone]").join(ContactInfo.No)}
       />
       <div className="mx-4 mt-6 print:hidden md:mx-10">
         {/* who */}
@@ -62,7 +62,8 @@ const page = ({ params }: { params: { services: string } }) => {
             <div
               className="text-justify "
               dangerouslySetInnerHTML={{
-                __html: serviceData.p2.split("[location]").join(locationName),
+                __html: serviceData.p2?.split("[location]").join(ContactInfo.location)
+            ?.split("[phone]").join(ContactInfo.No),
               }}
             ></div>
           </div>
@@ -114,8 +115,8 @@ const page = ({ params }: { params: { services: string } }) => {
               className="mt-4 "
               dangerouslySetInnerHTML={{
                 __html: serviceData.seoContent
-                  .split("[location]")
-                  .join(locationName),
+                  ?.split("[location]").join(ContactInfo.location)
+            ?.split("[phone]").join(ContactInfo.No),
               }}
             ></div>
           </div>

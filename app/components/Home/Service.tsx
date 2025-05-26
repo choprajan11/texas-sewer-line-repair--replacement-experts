@@ -26,7 +26,7 @@ const Service = ({value=""}: any) => {
 const StateName = contentData?.name ? (abbrevation ? `${contentData.name}, ${abbrevation}` : contentData.name) : ContactInfo.location;
   return (
     <div className=" px-4  md:px-10">
-      <h2 className="text-first text-center text-3xl font-bold text-main">
+      <h2 className="text-first text-center text-3xl font-bold text-main  mt-5">
         {data.title?.split("[location]").join(contentData?.name || ContactInfo.location)
             ?.split("[phone]").join(ContactInfo.No)}
       </h2>

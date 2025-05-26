@@ -84,7 +84,9 @@ const Page = () => {
       <div className="grid grid-cols-1 w-full md:grid-cols-2 gap-6 mt-16 md:px-24 px-4 items-center">
         <div className="flex flex-col justify-around w-full gap-3">
           <div>
-            <h2 className="text-3xl font-bold">{contentData?.h3}</h2>
+            <h2 className="text-3xl font-bold">{contentData?.h3?.split("[location]").join( ContactInfo.location)
+                ?.split("[phone]").join(ContactInfo.No)
+                }</h2>
             <div
               className="mt-10 text-justify"
               dangerouslySetInnerHTML={{ __html: contentData.p3?.split("[location]").join( ContactInfo.location)
@@ -108,7 +110,7 @@ const Page = () => {
       <div className="xl:w-full w-11/12 mx-4 md:mx-0 mt-16 md:mb-4 px-10 flex flex-col gap-6 md:flex-row justify-center items-center group md:space-x-2">
         <Image
           aria-hidden="true"
-          src="/img1.png"
+          src="https://ik.imagekit.io/h7rza8886p/img1.webp?updatedAt=1747997044944"
           alt="Calling icon"
           width={200}
           height={200}

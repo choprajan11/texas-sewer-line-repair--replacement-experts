@@ -23,7 +23,8 @@ const page = () => {
       <Navbar />
       <div>
         <Banner
-          h1={contentData.h1Banner}
+          h1={contentData.h1Banner?.split("[location]").join( ContactInfo.location)
+            ?.split("[phone]").join(ContactInfo.No)}
           image={contentData.bannerImage}
           header={contentData.bannerQuote}
           p1={contentData.metaDescription?.split("[location]").join( ContactInfo.location)
@@ -32,9 +33,6 @@ const page = () => {
 
         {/* Content 1 */}
         <div className="">
-          <div className=" mt-6 text-center text-4xl text-minor">
-            {contentData?.serviceTitle}
-          </div>
           {/* <Affordable /> */}
           <Service />
           {/* <TypeOfDumpster /> */}
