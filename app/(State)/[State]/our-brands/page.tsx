@@ -11,7 +11,8 @@ export const metadata: Metadata = {
   title: {
     absolute: contentData.metaTitle,
   },
-  description: contentData.metaDescription.split("[location]").join( ContactInfo.location)?.split("[phone]").join(ContactInfo.No),
+  description: contentData.metaDescription?.split("[location]").join( ContactInfo.location)
+  ?.split("[phone]").join(ContactInfo.No),
   alternates: {
     canonical: `${ContactInfo.baseUrl}our-brands/`,
   },
