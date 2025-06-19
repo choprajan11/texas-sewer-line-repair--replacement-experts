@@ -11,8 +11,11 @@ export const metadata: Metadata = {
   title: {
     absolute: contentData.metaTitle,
   },
-  description: contentData.metaDescription?.split("[location]").join( ContactInfo.location)
-  ?.split("[phone]").join(ContactInfo.No),
+  description: contentData.metaDescription
+    ?.split("[location]")
+    .join(ContactInfo.location)
+    ?.split("[phone]")
+    .join(ContactInfo.No),
   alternates: {
     canonical: `${ContactInfo.baseUrl}our-brands/`,
   },
@@ -20,12 +23,20 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <div>
-      <NavbarState/>
+      <NavbarState />
       <Banner
-        h1={contentData.h1Banner.split("[location]").join( ContactInfo.location)?.split("[phone]").join(ContactInfo.No)}
+        h1={contentData.h1Banner
+          .split("[location]")
+          .join(ContactInfo.location)
+          ?.split("[phone]")
+          .join(ContactInfo.No)}
         image={contentData.bannerImage}
         header=""
-        p1={contentData.metaDescription.split("[location]").join( ContactInfo.location)?.split("[phone]").join(ContactInfo.No)}
+        p1={contentData.metaDescription
+          .split("[location]")
+          .join(ContactInfo.location)
+          ?.split("[phone]")
+          .join(ContactInfo.No)}
       />
 
       {/* Content 1 */}
@@ -44,24 +55,28 @@ const page = () => {
             src={`${contentData.h2Image}`}
             className=" h-full w-full rounded-lg object-cover shadow-lg"
             alt={contentData.h2Image.split("/").pop()?.split(".")[0] || "image"}
-            title={contentData.h2Image.split("/").pop()?.split(".")[0] || "image"}
+            title={
+              contentData.h2Image.split("/").pop()?.split(".")[0] || "image"
+            }
           />
         </div>
       </div>
       {/* Content 1 */}
-      <div className=" flex  flex-col justify-center bg-slate-50 py-10">
-        {contentData.brandslist.map((i, index) => (
-          <div
-            key={index}
-            className="mx-auto grid max-w-6xl items-center justify-center gap-4 border-b border-black p-4 md:py-10"
-          >
-            <p className="w-1/2 text-3xl text-main duration-100 ease-in-out hover:underline">
-              <Link href={i.brandLink}>{i.brandName}</Link>
-            </p>
-            <p className="">{i.brandDescription}</p>
-          </div>
-        ))}
-      </div>
+      {contentData.brandslist && (
+        <div className=" flex  flex-col justify-center bg-slate-50 py-10">
+          {contentData.brandslist.map((i, index) => (
+            <div
+              key={index}
+              className="mx-auto grid max-w-6xl items-center justify-center gap-4 border-b border-black p-4 md:py-10"
+            >
+              <p className="w-1/2 text-3xl text-main duration-100 ease-in-out hover:underline">
+                <Link href={i.brandLink}>{i.brandName}</Link>
+              </p>
+              <p className="">{i.brandDescription}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
